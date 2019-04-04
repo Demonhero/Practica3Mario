@@ -58,5 +58,56 @@ var game = function(){
 			jump_left: {frames: [4], flip: "x", loop: true},
 			death: {frames:[12], flip:false, rate:2, loop:false, trigger: "dying"}
 		})
+
+		Q.Sprite.exted("Goomba",{
+			init: function(p, {
+				sprite: "goomba_anim",
+				sheet: "goomba",
+				frame:0,
+				x: 600,
+				y:380,
+				vx:100,
+				alive:true
+			});
+			
+			this.add("2d, aiBounce, animation");
+			this.on("bump.left, bump.right, bump.botton", this, "kill");
+			this.on("bump.top", this, "killed");
+			this.on("dying", this, "die");
+				
+			},
+
+			kill: function(collision){
+				if(collision.obj.isA("Mario")){
+					Q.stageScene("endGame", 1, { label: "You Died"});
+				}
+			},
+
+			killed: function(collision){
+				if(collision.obj.isA("Mario")){
+					this.p.alive=false;
+					this.p.vx=0;
+					this.play("death");
+					collision.obj.p.vy=-300;
+				}
+
+			},
+
+			die: function() {
+				this.destroy(); 
+			},
+
+			step: function(dt){
+				if(this.p.alive){
+					if(this.p.vx>0||this.p.vix<0)
+						this.play("walk");
+				}
+			}
+		});
+
+		Q.animations("goomba_anim", {
+			walk: {frames: [0,1], flip: false, rate: 1/5, loop: true},
+			death: {frames: [2], flip: false, rate:1 loop: false, trigger: "dying"}
+		});
 				
 }
