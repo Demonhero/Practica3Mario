@@ -59,21 +59,22 @@ var game = function(){
 		death: {frames:[12], flip:false, rate:2, loop:false, trigger: "dying"}
 	})
 
-	Q.Sprite.exted("Goomba",{
-		init: function(p, {
-			sprite: "goomba_anim",
-			sheet: "goomba",
-			frame:0,
-			x: 600,
-			y:380,
-			vx:100,
-			alive:true
-		});
+	Q.Sprite.extend("Goomba",{
+		init: function(p) {
+			this._super(p, {
+				sprite: "goomba_anim",
+				sheet: "goomba",
+				frame: 0,
+				x:  600,
+				y: 380,
+				vx: 100,
+				alive:true
+			});
 		
-		this.add("2d, aiBounce, animation");
-		this.on("bump.left, bump.right, bump.botton", this, "kill");
-		this.on("bump.top", this, "killed");
-		this.on("dying", this, "die");
+			this.add("2d, aiBounce, animation");
+			this.on("bump.left, bump.right, bump.botton", this, "kill");
+			this.on("bump.top", this, "killed");
+			this.on("dying", this, "die");
 			
 		},
 
@@ -107,7 +108,7 @@ var game = function(){
 
 	Q.animations("goomba_anim", {
 		walk: {frames: [0,1], flip: false, rate: 1/5, loop: true},
-		death: {frames: [2], flip: false, rate:1 loop: false, trigger: "dying"}
+		death: {frames: [2], flip: false, rate:1, loop: false, trigger: "dying"}
 	});
 
 	Q.Sprite.extend("Bloopa", {
@@ -227,7 +228,7 @@ var game = function(){
 		}
 
 		// body...
-	}});
+	});
 
 	Q.scene("HUD", function(stage) {
 		stage.insert(new Q.Score());
