@@ -247,10 +247,10 @@ var game = function(){
   	stage.insert(new Q.Bloopa());
   	stage.insert(new Q.Princess());
   	
-  	stage.insert(new Q.Coin({ x: 250, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 500, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 750, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 1000, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 200, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 400, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 800, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 1200, y: 400 }));
   	
   	stage.insert(new Q.Score());
   });
@@ -352,7 +352,7 @@ var game = function(){
   });
 
   Q.loadTMX(
-  "princess.png, mainTitle.png, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, coin.json, coin.png, coin.ogg, music_die.ogg, music_level_complete.ogg, music_main.ogg",
+  "level.tms, princess.png, mainTitle.png, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, coin.json, coin.png, coin.ogg, music_die.ogg, music_level_complete.ogg, music_main.ogg",
   function() {
     Q.compileSheets("mario_small.png", "mario_small.json");
     Q.compileSheets("goomba.png", "goomba.json");
