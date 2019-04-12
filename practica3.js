@@ -184,9 +184,9 @@ var game = function(){
 	Q.Sprite.extend("Coin", {
 		init: function(p) {
 			this._super(p, {
-				sheet: "coin_anim",
+				sprite: "coin_anim",
 				frame: 0,
-				sprite: "coin",
+				sheet: "coin",
 				gravity: 0,
 				sensor: true,
 				picked: false
@@ -226,8 +226,6 @@ var game = function(){
 		}, score: function(score){
 			this.p.label="score: "+score;
 		}
-
-		// body...
 	});
 
 	Q.scene("HUD", function(stage) {
