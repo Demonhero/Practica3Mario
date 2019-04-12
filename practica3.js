@@ -350,13 +350,13 @@ var game = function(){
   });
 
   Q.loadTMX(
-  'princess.png, mainTitle.png, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, coin.json, coin.png, coin.ogg, music_die.ogg, music_level_complete.ogg, music_main.ogg',
+  "princess.png, mainTitle.png, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, coin.json, coin.png, coin.ogg, music_die.ogg, music_level_complete.ogg, music_main.ogg",
   function() {
-    Q.compileSheets('mario_small.png', 'mario_small.json');
-    Q.compileSheets('goomba.png', 'goomba.json');
-    Q.compileSheets('bloopa.png', 'bloopa.json');
-    Q.compileSheets('coin.png', 'coin.json');
-    Q.stageScene('mainMenu');
+    Q.compileSheets("mario_small.png", "mario_small.json");
+    Q.compileSheets("goomba.png", "goomba.json");
+    Q.compileSheets("bloopa.png", "bloopa.json");
+    Q.compileSheets("coin.png", "coin.json");
+    Q.stageScene("mainMenu");
   }
   );
 
