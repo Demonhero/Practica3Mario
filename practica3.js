@@ -249,10 +249,10 @@ var game = function(){
   		stage.insert(new Q.Bloopa());
   		stage.insert(new Q.Princess());
   		
-  		stage.insert(new Q.Coin({ x: 250, y: 400 }));
-  		stage.insert(new Q.Coin({ x: 500, y: 400 }));
-  		stage.insert(new Q.Coin({ x: 750, y: 400 }));
-  		stage.insert(new Q.Coin({ x: 1000, y: 400 }));
+  		stage.insert(new Q.Coin({ x: 200, y: 400 }));
+  		stage.insert(new Q.Coin({ x: 400, y: 400 }));
+  		stage.insert(new Q.Coin({ x: 800, y: 400 }));
+  		stage.insert(new Q.Coin({ x: 1200, y: 400 }));
   		
   		stage.insert(new Q.Score());
   	});
@@ -340,7 +340,7 @@ var game = function(){
   				x: -Q.width/2,
   				y: -Q.height/2,
   				fill: "#CCCCCC",
-  				asset: "mainTitle.png",
+  				asset: "mainMenu.png",
   				keyActionName: "fire"
   			})
   		);
@@ -354,7 +354,7 @@ var game = function(){
   	});
   	
   	Q.load(
-      'princess.png, mainTitle.png, mario_small.json, mario_small.png, \
+      'princess.png, mainMenu.png, mario_small.json, mario_small.png, \
       goomba.json, goomba.png, bloopa.json, bloopa.png,coin.json,coin.png, \
       coin.ogg, music_die.ogg, music_level_complete.ogg, music_main.ogg',
       function() {
@@ -364,7 +364,7 @@ var game = function(){
         Q.compileSheets('coin.png', 'coin.json');
         Q.loadTMX('level.tmx', function() {
           Q.state.reset({ status: 'onHold' });
-          Q.stageScene('mainTitle', 2, { sound: 'music_main.ogg' });
+          Q.stageScene('mainMenu', 2, { sound: 'music_main.ogg' });
         });
       }
     );
