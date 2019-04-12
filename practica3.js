@@ -346,14 +346,14 @@ var game = function(){
 	});
 	
     Q.loadTMX("level.tmx", function() {
-    Q.load("mario_small.png, mario_small.json, goomba.png, goomba.json, bloopa.png, bloopa.json, princess.png, mainTitle.png, coin.png, coin.json", function() {
-        Q.compileSheets("mario_small.png", "mario_small.json");
-        Q.compileSheets("goomba.png", "goomba.json");
-        Q.compileSheets("bloopa.png", "bloopa.json");
-        Q.compileSheets("coin.png", "coin.json");
-        Q.stageScene("mainMenu");
-	});
-
+    	Q.load("mario_small.png, mario_small.json, goomba.png, goomba.json, bloopa.png, bloopa.json, princess.png, mainTitle.png, coin.png, coin.json", function() {
+	        Q.compileSheets("mario_small.png", "mario_small.json");
+	        Q.compileSheets("goomba.png", "goomba.json");
+	        Q.compileSheets("bloopa.png", "bloopa.json");
+	        Q.compileSheets("coin.png", "coin.json");
+	        Q.stageScene("mainMenu");
+		});
+    });
 
 
 
