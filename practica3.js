@@ -347,14 +347,14 @@ var game = function(){
 			Q.stageScene('level1',1);
 		}
 		container.fit(20);
-		
+
 	})
 	
 	Q.loadTMX("level.tmx, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, princess.png, mainTitle.png, coin.png", function() {
 		Q.compileSheets("mario_small.png", "mario_small.json");
 		Q.compileSheets("goomba.png", "goomba.json");
 		Q.compileSheets("bloopa.png", "bloopa.json");
-		Q.stageScene("mainMenu");
+		Q.stageScene("level1");
 });
 
 
