@@ -196,7 +196,7 @@ var game = function(){
         y: 0
   		});
 
-  		this.add("tween, animation");
+  		this.add("2d, aiBounce, animation");
 
   		this.on("sensor", function(collision) {
   			if (!this.p.collision && collision.isA("Mario")) {
