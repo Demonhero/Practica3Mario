@@ -120,9 +120,9 @@ var game = function(){
   			sheet: "bloopa",
   			gravity: 0.1,
   			frame: 0,
-  			x: 450,
+  			x: 500,
   			y: 380,
-  			vy: 150,
+  			vy: 200,
   			alive: true
   		});
 
@@ -189,7 +189,6 @@ var game = function(){
   			frame: 0,
   			sheet: "coin",
   			gravity: 0,
-  			//sensor: true,
   			picked: false,
   		});
 
@@ -242,10 +241,10 @@ var game = function(){
   	stage.insert(new Q.Bloopa());
   	stage.insert(new Q.Princess());
   	
-  	stage.insert(new Q.Coin({ x: 150, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 300, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 450, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 1000, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 150, y: 500 }));
+  	stage.insert(new Q.Coin({ x: 300, y: 500 }));
+  	stage.insert(new Q.Coin({ x: 450, y: 500 }));
+  	stage.insert(new Q.Coin({ x: 1000, y: 500 }));
   	
   	stage.insert(new Q.Score());
   });
