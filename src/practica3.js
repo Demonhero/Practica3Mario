@@ -349,4 +349,5 @@ var game = function(){
     Q.compileSheets("bloopa.png", "bloopa.json");
     Q.compileSheets("coin.png", "coin.json");
     Q.stageScene("mainMenu", {sound: "music_main.ogg"});
-});
+  });
+};
