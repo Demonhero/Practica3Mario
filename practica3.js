@@ -188,17 +188,19 @@ var game = function(){
   	Q.Sprite.extend("Coin", {
   		init: function(p) {
   			this._super(p, {
-  				sprite: "coin_anim",
+  				sprite: "coin",
   				frame: 0,
-  				sheet: "coin",
+  				sheet: "coin_anim",
   				gravity: 0,
   				sensor: true,
   				picked: false
   			});
 
   			this.add("tween, animation");
+
   			this.on("sensor", function(collision) {
   				if (!this.p.collision && collision.isA("Mario")) {
+            Q.audio.play("coin.ogg");
   					Q.state.inc("score", 1);
   					this.p.picked = true;
   					this.animate({ y: this.p.y - 50 }, 0.2, Q.Easing.Linear, {
