@@ -206,9 +206,8 @@ var game = function(){
   					},
   				});
   			}
-  		});
+  		});*/
   	},
-*/
   	step: function(p) {
   		this.play("switch");
   	},
