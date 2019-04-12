@@ -195,18 +195,6 @@ var game = function(){
 
   		this.add("tween, animation");
       this.on("bump.left, bump.right, bump.bottom, bum.top", this, "take");
-/*
-  		this.on("sensor", function(collision) {
-  			if (!this.p.collision && collision.isA("Mario")) {
-  				Q.state.inc("score", 1);
-  				this.p.picked = true;
-  				this.animate({ y: this.p.y - 50 }, 0.2, Q.Easing.Linear, {
-  					callback: function() {
-  						this.destroy();
-  					},
-  				});
-  			}
-  		});*/
   	},
   	step: function(p) {
   		this.play("switch");
