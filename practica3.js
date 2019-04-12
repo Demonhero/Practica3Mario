@@ -120,8 +120,8 @@ var game = function(){
   			sheet: "bloopa",
   			gravity: 0.1,
   			frame: 0,
-  			x: 800,
-  			y: 380,
+  			x: 500,
+  			y: 480,
   			vy: 150,
   			alive: true
   		});
@@ -136,7 +136,7 @@ var game = function(){
   		if (collision.obj.isA("Mario")) {
   			Q.stageScene("endGame", 1, { label: "You Died" });
   		}else{
-        collision.obj.p.vy = +300;
+        collision.obj.p.vy = -150;
       }
 
   	},
@@ -144,7 +144,7 @@ var game = function(){
   	killed: function(collision) {
   		if (collision.obj.isA("Mario")) {
   			this.p.alive = false;
-  			this.play("death");
+  			this.play("die");
   			collision.obj.p.vy = -300;
   		}
   	},
@@ -240,10 +240,10 @@ var game = function(){
   	stage.insert(new Q.Bloopa());
   	stage.insert(new Q.Princess());
   	
-  	stage.insert(new Q.Coin({ x: 250, y: 450 }));
-  	stage.insert(new Q.Coin({ x: 350, y: 450 }));
-  	stage.insert(new Q.Coin({ x: 500, y: 450 }));
-  	stage.insert(new Q.Coin({ x: 1000, y: 450 }));
+  	stage.insert(new Q.Coin({ x: 250, y: 500 }));
+  	stage.insert(new Q.Coin({ x: 350, y: 500 }));
+  	stage.insert(new Q.Coin({ x: 500, y: 500 }));
+  	stage.insert(new Q.Coin({ x: 1000, y: 500 }));
   	
   	stage.insert(new Q.Score({ x: 100, y: 400 }));
   });
