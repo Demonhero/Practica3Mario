@@ -50,12 +50,12 @@ var game = function(){
 	});
 
 	Q.animations("mario_anim",{
-		stand_right: {frames:[0], flip:false, loop:true},
-		stand_left: {frames:[0], flip: "x", loop:true},
-		walk_right: {frames: [1,2,3], rate: 1/10, flip:false, loop:true},
-		walk_left: {frames: [1,2,3], rate: 1/10, flip: "x", loop:true},
-		jump_right: {frames: [4], flip: false, loop: true},
-		jump_left: {frames: [4], flip: "x", loop: true},
+		stand_right: {frames:[0], flip:false, loop:true, rate: 1/5},
+		stand_left: {frames:[0], flip: "x", loop:true, rate: 1/5},
+		walk_right: {frames: [1,2,3], rate: 1/15, flip:false, loop:true},
+		walk_left: {frames: [1,2,3], rate: 1/15, flip: "x", loop:true},
+		jump_right: {frames: [4], flip: false, loop: true, rate: 1/5},
+		jump_left: {frames: [4], flip: "x", loop: true, rate: 1/5},
 		death: {frames:[12], flip:false, rate:2, loop:false, trigger: "dying"}
 	})
 
@@ -158,8 +158,8 @@ var game = function(){
 	});
 
 	Q.animations("bloopa_anim", {
-		up: { frames: [0], flip: false, loop: true },
-		down: { frames: [1], flip: false, loop: true },
+		up: { frames: [0], flip: false, loop: true , rate:1},
+		down: { frames: [1], flip: false, loop: true, rate:1 },
 		death: { frames: [2], flip: false, rate: 1, loop: false, trigger: "dying" }
 	});
 
