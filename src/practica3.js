@@ -144,7 +144,7 @@ var game = function(){
     killed: function(collision) {
       if (collision.obj.isA("Mario")) {
         this.p.alive = false;
-        this.play("die");
+        this.play("death");
         collision.obj.p.vy = -300;
       }
     },
@@ -202,7 +202,6 @@ var game = function(){
       this.play("switch");
     },
     take: function(){
-      Q.state.inc("score", 10);
       this.destroy();
     },
   });
