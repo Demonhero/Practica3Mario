@@ -186,9 +186,9 @@ var game = function(){
   Q.Sprite.extend("Coin", {
   	init: function(p) {
   		this._super(p, {
-  			sprite: "coin",
+  			sprite: "coin_anim",
   			frame: 0,
-  			sheet: "coin_anim",
+  			sheet: "coin",
   			gravity: 0,
   			sensor: true,
   			picked: false
