@@ -351,7 +351,7 @@ var game = function(){
         Q.compileSheets("goomba.png", "goomba.json");
         Q.compileSheets("bloopa.png", "bloopa.json");
         Q.compileSheets("coin.png", "coin.json");
-        Q.stageScene("mainTitle");
+        Q.stageScene("mainMenu");
 	});
 
 
