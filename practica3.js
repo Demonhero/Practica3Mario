@@ -1,6 +1,6 @@
 var game = function(){
 	var Q= window.Q= Quintus()
-    .include("Sprites, Scenes,Input, UI, Touch, TMX, Anim, 2D").setup({ width:320, height:480, audioSupported: ['ogg', 'mp3'], })
+    .include("Audio, Sprites, Scenes,Input, UI, Touch, TMX, Anim, 2D").setup({ width:320, height:480, audioSupported: ['ogg', 'mp3'], })
     .controls().touch().enableSound()
   Q.Sprite.extend("Mario",{
     init: function(p) {
