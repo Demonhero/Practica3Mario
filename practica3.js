@@ -353,11 +353,20 @@ var game = function(){
   		container.fit(20);
   	});
   	
-  	Q.loadTMX("level.tmx, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, princess.png, mainTitle.png, coin.png", function() {
-  		Q.compileSheets("mario_small.png", "mario_small.json");
-  		Q.compileSheets("goomba.png", "goomba.json");
-  		Q.compileSheets("bloopa.png", "bloopa.json");
-  		Q.stageScene("mainMenu");
-  });
+  	Q.load(
+      'princess.png, mainTitle.png, mario_small.json, mario_small.png, \
+      goomba.json, goomba.png, bloopa.json, bloopa.png,coin.json,coin.png, \
+      coin.ogg, music_die.ogg, music_level_complete.ogg, music_main.ogg',
+      function() {
+        Q.compileSheets('mario_small.png', 'mario_small.json');
+        Q.compileSheets('goomba.png', 'goomba.json');
+        Q.compileSheets('bloopa.png', 'bloopa.json');
+        Q.compileSheets('coin.png', 'coin.json');
+        Q.loadTMX('level.tmx', function() {
+          Q.state.reset({ status: 'onHold' });
+          Q.stageScene('mainTitle', 2, { sound: 'music_main.ogg' });
+        });
+      }
+    );
 
 };
