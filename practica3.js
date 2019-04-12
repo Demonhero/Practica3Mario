@@ -9,7 +9,7 @@ var game = function(){
         sheet: "marioR",
         gravity: 0.65,
         frame: 0,
-        x: 150,
+        x: 100,
         y:380,
         alive:true
       });
@@ -120,7 +120,7 @@ var game = function(){
   			sheet: "bloopa",
   			gravity: 0.1,
   			frame: 0,
-  			x: 500,
+  			x: 800,
   			y: 380,
   			vy: 200,
   			alive: true
@@ -241,12 +241,12 @@ var game = function(){
   	stage.insert(new Q.Bloopa());
   	stage.insert(new Q.Princess());
   	
-  	stage.insert(new Q.Coin({ x: 150, y: 500 }));
-  	stage.insert(new Q.Coin({ x: 300, y: 500 }));
-  	stage.insert(new Q.Coin({ x: 450, y: 500 }));
-  	stage.insert(new Q.Coin({ x: 1000, y: 500 }));
+  	stage.insert(new Q.Coin({ x: 250, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 350, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 500, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 1000, y: 400 }));
   	
-  	stage.insert(new Q.Score());
+  	stage.insert(new Q.Score({ x: 100, y: 400 }));
   });
 
   Q.scene("endGame", function(stage) {
