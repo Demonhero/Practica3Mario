@@ -122,7 +122,7 @@ var game = function(){
   			frame: 0,
   			x: 800,
   			y: 380,
-  			vy: 200,
+  			vy: 150,
   			alive: true
   		});
 
@@ -135,7 +135,10 @@ var game = function(){
   	kill: function(collision) {
   		if (collision.obj.isA("Mario")) {
   			Q.stageScene("endGame", 1, { label: "You Died" });
-  		}
+  		}else{
+        collision.obj.p.vy = -300;
+      }
+
   	},
 
   	killed: function(collision) {
@@ -192,7 +195,7 @@ var game = function(){
   			picked: false,
   		});
 
-  		this.add("tween, animation");
+  		this.add("2d, tween, animation");
       this.on("bump.left, bump.right, bump.bottom, bum.top", this, "take");
   	},
   	step: function(p) {
