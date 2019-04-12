@@ -1,7 +1,7 @@
 var game = function(){
 	var Q= window.Q= Quintus()
-    .include("Audio, Sprites, Scenes,Input, UI, Touch, TMX, Anim, 2D").setup({ width:320, height:480, audioSupported: ['ogg', 'mp3'], })
-    .controls().touch().enableSound()
+    .include("Sprites, Scenes,Input, UI, Touch, TMX, Anim, 2D").setup({ width:320, height:480, audioSupported: ['ogg', 'mp3'], })
+    .controls().touch()
   Q.Sprite.extend("Mario",{
     init: function(p) {
       this._super(p, {
@@ -120,7 +120,7 @@ var game = function(){
   			sheet: "bloopa",
   			gravity: 0.1,
   			frame: 0,
-  			x: 850,
+  			x: 450,
   			y: 380,
   			vy: 150,
   			alive: true
@@ -189,15 +189,15 @@ var game = function(){
   			frame: 0,
   			sheet: "coin",
   			gravity: 0,
-  			sensor: true,
+  			//sensor: true,
   			picked: false,
   		});
 
   		this.add("tween, animation");
-
+      this.on("bump.left, bump.right, bump.bottom, bum.top", this, "take");
+/*
   		this.on("sensor", function(collision) {
   			if (!this.p.collision && collision.isA("Mario")) {
-          Q.audio.play("coin.ogg");
   				Q.state.inc("score", 1);
   				this.p.picked = true;
   				this.animate({ y: this.p.y - 50 }, 0.2, Q.Easing.Linear, {
@@ -208,10 +208,18 @@ var game = function(){
   			}
   		});
   	},
-
+*/
   	step: function(p) {
   		this.play("switch");
-  	}
+  	},
+    take: function(){
+      Q.state.inc("score", 10);
+      this.animate({ y: this.p.y - 50 }, 0.2, Q.Easing.Linear, {
+            callback: function() {
+              this.destroy();
+            },
+          });
+    }
   });
 
   Q.animations("coin", {
