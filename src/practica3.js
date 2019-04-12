@@ -353,7 +353,7 @@ var game = function(){
 		Q.compileSheets("mario_small.png", "mario_small.json");
 		Q.compileSheets("goomba.png", "goomba.json");
 		Q.compileSheets("bloopa.png", "bloopa.json");
-		Q.stageScene("mainMenu");
+		//Q.stageScene("mainMenu");
 });
 
 
