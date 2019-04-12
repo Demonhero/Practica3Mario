@@ -121,7 +121,7 @@ var game = function(){
   			gravity: 0.1,
   			frame: 0,
   			x: 500,
-  			y: 480,
+  			y: 500,
   			vy: 150,
   			alive: true
   		});
@@ -191,7 +191,9 @@ var game = function(){
   			sheet: "coin",
   			gravity: 0,
   			sensor: true,
-  			picked: false
+  			picked: false,
+        x: 0,
+        y: 0
   		});
 
   		this.add("tween, animation");
@@ -212,7 +214,7 @@ var game = function(){
 
   	step: function(p) {
   		this.play("switch");
-  	},
+  	}
   });
 
   Q.animations("coin", {
