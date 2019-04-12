@@ -219,7 +219,7 @@ var game = function(){
               this.destroy();
             },
           });
-    }
+    },
   });
 
   Q.animations("coin", {
