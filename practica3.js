@@ -1,7 +1,7 @@
 var game = function(){
 	var Q= window.Q= Quintus()
     .include("Sprites, Scenes,Input, UI, Touch, TMX, Anim, 2D").setup({ width:320, height:480, audioSupported: ['ogg', 'mp3'], })
-    .controls().touch()
+    .controls().touch().soundEnable()
   Q.Sprite.extend("Mario",{
     init: function(p) {
       this._super(p, {
@@ -136,7 +136,6 @@ var game = function(){
   		if (collision.obj.isA("Mario")) {
   			Q.stageScene("endGame", 1, { label: "You Died" });
   		}
-  		else this.p.vy = -150;
   	},
 
   	killed: function(collision) {
@@ -192,11 +191,9 @@ var game = function(){
   			gravity: 0,
   			sensor: true,
   			picked: false,
-        x: 0,
-        y: 0
   		});
 
-  		 this.add("tween, animation");
+  		this.add("tween, animation");
 
   		this.on("sensor", function(collision) {
   			if (!this.p.collision && collision.isA("Mario")) {
@@ -229,9 +226,10 @@ var game = function(){
   			y: 0
   		});
   		Q.state.on("change.score", this, "socre");
-  	}, score: function(score){
-  		this.p.label="score: "+score;
-  	}
+  	}, 
+    score: function(score){
+      this.p.label="score: "+score;
+  	},
   });
 
   Q.scene("HUD", function(stage) {
