@@ -136,7 +136,7 @@ var game = function(){
   		if (collision.obj.isA("Mario")) {
   			Q.stageScene("endGame", 1, { label: "You Died" });
   		}else{
-        collision.obj.p.vy = -300;
+        collision.obj.p.vy = +300;
       }
 
   	},
@@ -203,11 +203,7 @@ var game = function(){
   	},
     take: function(){
       Q.state.inc("score", 10);
-      this.animate({ y: this.p.y - 50 }, 0.2, Q.Easing.Linear, {
-            callback: function() {
-              this.destroy();
-            },
-          });
+      this.destroy();
     },
   });
 
@@ -244,10 +240,10 @@ var game = function(){
   	stage.insert(new Q.Bloopa());
   	stage.insert(new Q.Princess());
   	
-  	stage.insert(new Q.Coin({ x: 250, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 350, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 500, y: 400 }));
-  	stage.insert(new Q.Coin({ x: 1000, y: 400 }));
+  	stage.insert(new Q.Coin({ x: 250, y: 450 }));
+  	stage.insert(new Q.Coin({ x: 350, y: 450 }));
+  	stage.insert(new Q.Coin({ x: 500, y: 450 }));
+  	stage.insert(new Q.Coin({ x: 1000, y: 450 }));
   	
   	stage.insert(new Q.Score({ x: 100, y: 400 }));
   });
