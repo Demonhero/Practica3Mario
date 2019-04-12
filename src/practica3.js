@@ -142,7 +142,7 @@ var game = function(){
       if (collision.obj.isA("Mario")) {
         Q.stageScene("endGame", 1, { label: "You Died" });
       }else{
-        collision.obj.p.vy = -150;
+        this.p.vy = -150;
       }
 
     },
@@ -232,7 +232,7 @@ var game = function(){
     init: function (p) {
       this._super({
         label: "Score: 0",
-        x: 100,
+        x: 60,
         y: 0
       });
       Q.state.on("change.score", this, "socre");
@@ -266,7 +266,7 @@ var game = function(){
     stage.insert(new Q.Coin({ x: 800, y: 400 }));
     stage.insert(new Q.Coin({ x: 1200, y: 400 }));
     
-    /*stage.insert(new Q.Score());*/
+    stage.insert(new Q.Score());
   });
 
   //-------------------------------------------------------------------------------//
