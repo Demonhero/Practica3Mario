@@ -227,6 +227,7 @@ var game = function(){
 			this.p.label="score: "+score;
 		}
 
+		// body...
 	});
 
 	Q.scene("HUD", function(stage) {
@@ -340,13 +341,12 @@ var game = function(){
 			})
 		);
 
-		const newGame=function(){
+		button.on("click", function() {
 			Q.clearStages();
-			Q.stageScene('HUD',2);
-			Q.stageScene('level1',1);
-		}
-		container.fit(20);
+			Q.stageScene("level1");
+		});
 
+		container.fit(20);
 	})
 	
 	Q.loadTMX("level.tmx, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, princess.png, mainTitle.png, coin.png", function() {
