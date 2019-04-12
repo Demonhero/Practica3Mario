@@ -120,8 +120,8 @@ var game = function(){
   			sheet: "bloopa",
   			gravity: 0.1,
   			frame: 0,
-  			x: 500,
-  			y: 500,
+  			x: 850,
+  			y: 380,
   			vy: 150,
   			alive: true
   		});
@@ -225,7 +225,7 @@ var game = function(){
   	init: function (p) {
   		this._super({
   			label: "Score: 0",
-  			x: 60,
+  			x: 100,
   			y: 0
   		});
   		Q.state.on("change.score", this, "socre");
@@ -358,7 +358,7 @@ var game = function(){
     Q.compileSheets("goomba.png", "goomba.json");
     Q.compileSheets("bloopa.png", "bloopa.json");
     Q.compileSheets("coin.png", "coin.json");
-    Q.stageScene("mainMenu");
+    Q.stageScene("mainMenu", {sound: "music_main.ogg"});
 });
 
 };
