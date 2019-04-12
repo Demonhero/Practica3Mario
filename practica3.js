@@ -324,17 +324,20 @@ var game = function(){
 	});
 
 	Q.scene("mainMenu", function(stage) {
-		const container = stage.insert( new Q.UI.Container({
+		const container = stage.insert(
+			new Q.UI.Container({
 				x: Q.width,
 				y: Q.height
 			})
 		);
 
-		const button = container.insert(new Q.UI.Button({
+		const button = container.insert(
+			new Q.UI.Button({
 				x: -Q.width/2,
 				y: -Q.height/2,
 				fill: "#CCCCCC",
 				asset: "mainTitle.png",
+				keyActionName: "fire"
 			})
 		);
 
