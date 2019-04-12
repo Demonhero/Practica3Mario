@@ -324,7 +324,7 @@ var game = function(){
 	});
 
 	Q.scene("mainMenu", function(stage) {
-		const container = stage.insert(new Q.UI.Container({
+		const container = stage.insert( new Q.UI.Container({
 				x: Q.width,
 				y: Q.height
 			})
@@ -334,7 +334,7 @@ var game = function(){
 				x: -Q.width/2,
 				y: -Q.height/2,
 				fill: "#CCCCCC",
-				asset: "mainTitle.png"
+				asset: "mainTitle.png",
 			})
 		);
 
@@ -342,18 +342,15 @@ var game = function(){
 			Q.clearStages();
 			Q.stageScene("level1");
 		});
-
-	});
+	})
 	
-    Q.loadTMX("level.tmx", function() {
-    	Q.load("mario_small.png, mario_small.json, goomba.png, goomba.json, bloopa.png, bloopa.json, princess.png, mainMenu.png, coin.png, coin.json", function() {
-	        Q.compileSheets("mario_small.png", "mario_small.json");
-	        Q.compileSheets("goomba.png", "goomba.json");
-	        Q.compileSheets("bloopa.png", "bloopa.json");
-	        Q.compileSheets("coin.png", "coin.json");
-	        Q.stageScene("mainMenu");
-		});
-    });
+	Q.loadTMX("level.tmx, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, princess.png, mainTitle.png, coin.png", function() {
+		Q.compileSheets("mario_small.png", "mario_small.json");
+		Q.compileSheets("goomba.png", "goomba.json");
+		Q.compileSheets("bloopa.png", "bloopa.json");
+		Q.stageScene("mainMenu");
+});
+
 
 
 
