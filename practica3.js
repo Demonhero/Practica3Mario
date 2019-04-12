@@ -186,7 +186,7 @@ var game = function(){
   Q.Sprite.extend("Coin", {
   	init: function(p) {
   		this._super(p, {
-  			sprite: "coin_anim",
+  			sprite: "coin",
   			frame: 0,
   			sheet: "coin",
   			gravity: 0,
@@ -215,7 +215,7 @@ var game = function(){
   	},
   });
 
-  Q.animations("coin_anim", {
+  Q.animations("coin", {
   	switch: { frames: [0, 1, 2], loop: true, rate: 1/2 },
   });
 
