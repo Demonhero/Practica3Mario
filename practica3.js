@@ -349,7 +349,7 @@ var game = function(){
   	container.fit(20);
   });
 
-  Q.load(
+  Q.loadTMX(
   'princess.png, mainTitle.png, mario_small.json, mario_small.png, goomba.json, goomba.png, bloopa.json, bloopa.png, coin.json, coin.png, coin.ogg, music_die.ogg, music_level_complete.ogg, music_main.ogg',
   function() {
     Q.compileSheets('mario_small.png', 'mario_small.json');
