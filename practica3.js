@@ -356,10 +356,7 @@ var game = function(){
     Q.compileSheets('goomba.png', 'goomba.json');
     Q.compileSheets('bloopa.png', 'bloopa.json');
     Q.compileSheets('coin.png', 'coin.json');
-    Q.loadTMX('level.tmx', function() {
-      Q.state.reset({ status: 'onHold' });
-      Q.stageScene('mainTitle', 2, { sound: 'music_main.ogg' });
-    });
+    Q.stageScene('mainMenu');
   }
   );
 
