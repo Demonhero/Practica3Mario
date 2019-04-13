@@ -210,6 +210,7 @@ var game = function(){
       this.add("2d, tween, animation");
       this.on("bump.left, bump.right, bump.bottom, bum.top", function(collision){
         if (collision.obj.isA("Mario")) {
+          this.p.vy=-50;
           this.destroy();
         }
       });
