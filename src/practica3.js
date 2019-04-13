@@ -227,7 +227,7 @@ var game = function(){
   });
 
   //---------------------------------------------------------------------------//
-
+  /*
 
   Q.UI.Text.extend("Score", {
     init: function (p) {
@@ -248,7 +248,7 @@ var game = function(){
   Q.scene("HUD", function(stage) {
     stage.insert(new Q.Score());
   });
-
+  */
   //------------------------------------------------------------------------------//
 
   Q.scene("level1", function(stage) {
@@ -267,7 +267,7 @@ var game = function(){
     stage.insert(new Q.Coin({ x: 800, y: 400 }));
     stage.insert(new Q.Coin({ x: 1200, y: 400 }));
     
-    stage.insert(new Q.Score());
+    //stage.insert(new Q.Score());
   });
 
   //-------------------------------------------------------------------------------//
